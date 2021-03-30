@@ -7,6 +7,7 @@ pipeline {
   stages {
     stage('Install') {
       steps {
+        sh 'echo "This is a different branch"'
         sh 'node --version'
         sh 'npm --version'
         sh 'yarn --version'
