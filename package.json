@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "e2e": "cypress open",
-    "e2e:ci": "concurrently \"cypress run\" --kill-others \"react-scripts start\" --success first"
+    "e2e:ci": "concurrently \"npx cypress run\" --kill-others \"react-scripts start\" --success first"
   },
   "eslintConfig": {
     "extends": [
