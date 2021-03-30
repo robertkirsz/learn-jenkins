@@ -1,18 +1,20 @@
 pipeline {
   agent { docker { image 'node:15' } }
   stages {
-    stage('Node version') {
+    stage('Install') {
       steps {
-        sh 'echo "👇 Here is a version of Node that we use"'
+        sh 'node --version'
         sh 'npm --version'
       }
     }
-    stage('Files list') {
+    stage('Unit tests') {
       steps {
-        sh '''
-          echo "This are files in the current directory:"
-          ls -lah
-        '''
+        sh 'npm test'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh 'npm run build'
       }
     }
   }
