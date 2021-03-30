@@ -18,6 +18,11 @@ pipeline {
         sh 'CI=true yarn test'
       }
     }
+    stage('e2e tests') {
+      steps {
+        sh 'yarn e2e:ci'
+      }
+    }
     stage('Build') {
       steps {
         sh 'yarn build'

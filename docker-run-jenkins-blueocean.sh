@@ -1,7 +1,5 @@
 docker run \
   --name jenkins-blueocean \
-  --rm \
-  --detach \
   --network jenkins \
   --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client \

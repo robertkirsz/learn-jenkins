@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "e2e": "cypress open"
+    "e2e": "cypress open",
+    "e2e:ci": "concurrently \"cypress run\" --kill-others \"react-scripts start\" --success first"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^6.0.0",
     "cypress": "^6.8.0"
   }
 }
