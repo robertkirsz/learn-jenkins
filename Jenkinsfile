@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Unit tests') {
       steps {
-        sh 'yarn test'
+        sh 'CI=true yarn test'
       }
     }
     stage('Build') {
