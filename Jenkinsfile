@@ -10,7 +10,7 @@ pipeline {
         sh 'node --version'
         sh 'npm --version'
         sh 'yarn --version'
-        sh 'CYPRESS_CACHE_FOLDER=./tmp/Cypress yarn install'
+        sh 'CYPRESS_CACHE_FOLDER=/home/node/.cache/Cypress yarn install'
       }
     }
     stage('Unit tests') {
@@ -20,7 +20,7 @@ pipeline {
     }
     stage('e2e tests') {
       steps {
-        sh 'CYPRESS_CACHE_FOLDER=./tmp/Cypress yarn e2e:ci'
+        sh 'CYPRESS_CACHE_FOLDER=/home/node/.cache/Cypress yarn e2e:ci'
       }
     }
     stage('Build') {
